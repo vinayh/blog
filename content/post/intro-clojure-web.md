@@ -6,7 +6,7 @@ keywords = []
 title = "Intro web dev with Clojure"
 
 +++
-(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides [here](http://hivinay.github.io/clojure-web-talk).)
+(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides [here](https://github.com/vinayh/clojure-web-talk). I have explained the first portion of the content here in more depth.)
 
 I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.
 
@@ -29,7 +29,7 @@ As mentioned earlier, variables are essentially always immutable in Clojure
 * The code-is-data philosophy allows for assigning variable names to functions (among many other things)
 ``` clojure
 (def my-function (fn [x] (+ 5 x)))
-``` 
+```
 * This creates a function called `my-function` that returns the sum of `5` and a parameter `x`
 * Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the `+` function as being called with two operands, `5` and `x`, and returning the resulting sum
 
@@ -62,7 +62,7 @@ As mentioned earlier, variables are essentially always immutable in Clojure
 
 ## An arithmetic expression
 * A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit
-* Simply evaluate by recursing into every S-expression: 
+* Simply evaluate by recursing into every S-expression:
 ```clojure
 (- (+ 1 (/ (* 2 3) 4)) 5)
 ```
@@ -75,4 +75,3 @@ As mentioned earlier, variables are essentially always immutable in Clojure
   (- 5))
 ```
 * The thread-first macro shown above `(->)` inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn
-

@@ -17,7 +17,7 @@
       <guid>/post/intro-clojure-web/</guid>
       <description>
 
-&lt;p&gt;(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides &lt;a href=&#34;http://hivinay.github.io/clojure-web-talk&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides &lt;a href=&#34;https://github.com/vinayh/clojure-web-talk&#34;&gt;here&lt;/a&gt;. I have explained the first portion of the content here in more depth.)&lt;/p&gt;
 
 &lt;p&gt;I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.&lt;/p&gt;
 
