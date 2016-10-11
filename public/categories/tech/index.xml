@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Vinay Hiremath</title>
+    <link>http://hivinay.com/categories/tech/</link>
+    <description>Recent content in Tech on Vinay Hiremath</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jul 2015 17:02:35 -0400</lastBuildDate>
+    <atom:link href="http://hivinay.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Intro web dev with Clojure</title>
+      <link>http://hivinay.com/post/intro-clojure-web/</link>
+      <pubDate>Tue, 28 Jul 2015 17:02:35 -0400</pubDate>
+      
+      <guid>http://hivinay.com/post/intro-clojure-web/</guid>
+      <description>
+
+&lt;p&gt;(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides &lt;a href=&#34;http://hivinay.github.io/clojure-web-talk&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-clojure-besides-the-best-language-ever&#34;&gt;What is Clojure? (besides the best language ever!)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A dialect of the Lisp language, which means that the syntax uses elegant S-expressions with the code-is-data philosophy&lt;/li&gt;
+&lt;li&gt;Based on the Java Virtual Machine, which means that it is quite fast when compiled to Java bytecode and that you can easily integrate other Java libraries or use your Clojure code in a Java codebase&lt;/li&gt;
+&lt;li&gt;Strong emphasis on functional programming, which improves your ability to reason about large projects because state is effectively eliminated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools-you-will-need&#34;&gt;Tools you will need&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Leiningen (for local Clojure development) - &lt;a href=&#34;http://leiningen.org&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Heroku Toolbelt (if you want to deploy to Heroku) - &lt;a href=&#34;https://toolbelt.heroku.com/&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PostgreSQL (for a local database) - &lt;a href=&#34;http://www.postgresql.org/download/&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;some-basics-of-clojure&#34;&gt;Some basics of Clojure&lt;/h2&gt;
+
+&lt;p&gt;As mentioned earlier, variables are essentially always immutable in Clojure&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(def my-name &amp;quot;Vinay&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This defines a constant called &lt;code&gt;my-name&lt;/code&gt; that refers to the string &lt;code&gt;&amp;quot;Vinay&amp;quot;&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;The code-is-data philosophy allows for assigning variable names to functions (among many other things)
+&lt;code&gt;clojure
+(def my-function (fn [x] (+ 5 x)))
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;This creates a function called &lt;code&gt;my-function&lt;/code&gt; that returns the sum of &lt;code&gt;5&lt;/code&gt; and a parameter &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the &lt;code&gt;+&lt;/code&gt; function as being called with two operands, &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;x&lt;/code&gt;, and returning the resulting sum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;more-basics-of-functions-in-clojure&#34;&gt;More basics of functions in Clojure&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Let&amp;rsquo;s simplify the function notation above using the &lt;code&gt;defn&lt;/code&gt; macro to express the same thing:
+&lt;code&gt;clojure
+(defn my-function [x] (+ 5 x)
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Note that to define a function, &lt;code&gt;defn&lt;/code&gt; is followed by:
+
+&lt;ul&gt;
+&lt;li&gt;The function name (eg. &lt;code&gt;my-function&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;The function parameters (eg. &lt;code&gt;x&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;The function implementation (eg &lt;code&gt;(+ 5 x)&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;You can call the function like so:
+&lt;code&gt;clojure
+(my-function 4) ;; Result is 5 + 4 = 9 in this case
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;confused-by-all-of-the-parentheses&#34;&gt;Confused by all of the parentheses?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clojure uses S-expressions to denote nearly every statement as a list&lt;/li&gt;
+&lt;li&gt;As you probably noticed above, function definitions could be denoted as a list, with the elements: &lt;code&gt;defn&lt;/code&gt;, the parameters in a vector (i.e. enclosed by &lt;code&gt;[ ]&lt;/code&gt;), and the implementation&lt;/li&gt;
+&lt;li&gt;Just about everything in Clojure uses this syntax, and another common example is the &lt;code&gt;let&lt;/code&gt; form which:
+
+&lt;ul&gt;
+&lt;li&gt;Binds variables to values provided as pairs, eg. &lt;code&gt;[variable_1 value_1 variable_2 value_2]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Evaluates expressions with this context or scope
+&lt;code&gt;clojure
+(let [x 1
+y 2]
+(+ x y))
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The whole &lt;code&gt;let&lt;/code&gt; expression evaluates to the result of the last expression, which in this case is the sum of &lt;code&gt;x = 1&lt;/code&gt; and &lt;code&gt;y = 2&lt;/code&gt;, so &lt;code&gt;3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;an-arithmetic-expression&#34;&gt;An arithmetic expression&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit&lt;/li&gt;
+&lt;li&gt;Simply evaluate by recursing into every S-expression:
+&lt;code&gt;clojure
+(- (+ 1 (/ (* 2 3) 4)) 5)
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The threading macros in Clojure provides a procedural alternative to this with beautiful syntax. Rewriting, starting at the &lt;code&gt;2&lt;/code&gt; in the nested expression above:
+&lt;code&gt;clojure
+(-&amp;gt; 2
+(* 3)
+(/ 4)
+(+ 1)
+(- 5))
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The thread-first macro shown above &lt;code&gt;(-&amp;gt;)&lt;/code&gt; inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git hook to deploy static sites to S3</title>
+      <link>http://hivinay.com/post/git-hooks/</link>
+      <pubDate>Tue, 28 Jul 2015 14:49:41 -0400</pubDate>
+      
+      <guid>http://hivinay.com/post/git-hooks/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.&lt;/p&gt;
+
+&lt;p&gt;All you really need is:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A way to upload a folder to S3 (I use the excellent &lt;code&gt;s3cmd&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;A hook that triggers the upload on every &lt;code&gt;git push&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For example, if your static site generator is &lt;code&gt;hugo&lt;/code&gt;, with destination dir &lt;code&gt;public&lt;/code&gt; (like Hugo by default) and your S3 bucket is called &lt;code&gt;&amp;lt;example_bucket&amp;gt;&lt;/code&gt;, create a new shell script called &lt;code&gt;pre-push&lt;/code&gt; in the &lt;code&gt;.git/hooks&lt;/code&gt; directory of your site source as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+set -e
+echo -e &amp;quot;\t Building site...&amp;quot;
+hugo
+echo -e &amp;quot;\t Successfully generated site&amp;quot;
+s3cmd sync --recursive public/ s3://&amp;lt;example_bucket&amp;gt;
+echo -e &amp;quot;\t Successfully deployed to S3&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mark the script as executable using &lt;code&gt;chmod +x .git/hooks/pre-push&lt;/code&gt; and try pushing to your Git server. If everything goes well, &lt;code&gt;s3cmd&lt;/code&gt; will automatically be triggered and will perform a &lt;code&gt;sync&lt;/code&gt; operation to upload changed files to S3. Assuming you have your S3 settings configured for a public web server (static website hosting is enabled, index and error documents are set correctly, public read access is permitted) then you should be able to see the contents of your &lt;code&gt;public&lt;/code&gt; dir (ie. your website) at the URL assigned to your bucket.&lt;/p&gt;
+
+&lt;p&gt;Note: This S3 bucket policy will enable public read access:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+	&amp;quot;Statement&amp;quot;: [
+		{
+			&amp;quot;Sid&amp;quot;: &amp;quot;AllowPublicRead&amp;quot;,
+			&amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;,
+			&amp;quot;Principal&amp;quot;: {
+				&amp;quot;AWS&amp;quot;: &amp;quot;*&amp;quot;
+			},
+			&amp;quot;Action&amp;quot;: &amp;quot;s3:GetObject&amp;quot;,
+			&amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::&amp;lt;example_bucket&amp;gt;/*&amp;quot;
+		}
+	]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Courtesy of &lt;a href=&#34;https://moosingin3space.github.io/post/git-hooks-hugo/&#34;&gt;Nathan Moos&amp;rsquo; blog post&lt;/a&gt; outlining this process for GitHub Pages, which requires a nested repository with your public files.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
