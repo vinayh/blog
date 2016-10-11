@@ -62,7 +62,7 @@ paginate = 10
     # The format shown here is the same one Jekyll/Octopress uses by default.
     post = "/blog/:year/:month/:day/:title/"
 
-[indexes]
+[taxonomies]
     # Optional. Use if you want tags and lists.
     category = "categories"
 
@@ -72,12 +72,16 @@ paginate = 10
 [params]
     # If false display full article contents in blog index.
     # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if ommitted) is true.
+    # Default (if omitted) is true.
     truncate = true
 
     # Used when a given page doesn't set its own.
     defaultDescription = "Your default page description"
     defaultKeywords = "your,default,page,keywords"
+
+    # Hide estimated reading time for posts.
+    # Default (if omitted) is false.
+    hideReadingTime = false
 
     # Changes sidebar background and link/accent colours.
     # See below for more colour options.
@@ -88,22 +92,34 @@ paginate = 10
     # Check the static/css/highlight directory for options.
     highlight = "sunburst"
 
+    # Optional additional custom CSS file URL, will override other styles.
+    customCSS = ""
+
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
     tagline = "Your favourite quote or soundbite."
 
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is "Blog".
+    home = "Blog"
+
     # Metadata used to drive integrations.
-    googleAuthorship = "Your Google+ profile ID"
     googleAnalytics = "Your Google Analytics tracking code"
     gravatarHash = "MD5 hash of your Gravatar email address"
 
     # Sidebar social links, these must be full URLs.
     github = ""
     bitbucket = ""
+    stackOverflow = ""
     linkedin = ""
     googleplus = ""
     facebook = ""
     twitter = ""
+    youtube = ""
+
+    # Other social-like sidebar links
+    rss = false  # switch to true to enable RSS icon link
+    flattr = ""  # populate with your flattr uid
 ```
 
 ### Built-in colour themes
@@ -130,7 +146,6 @@ Hyde-X provides 8 built-in colour themes by default, with the option to define m
 * Disqus integration: comment counts listed under blog entry names in post list, comments displayed at the bottom of each post.
 * Gravatar image in sidebar.
 * Google Analytics integration.
-* Google Authorship metadata.
 * Sidebar link layout and footer format changes.
 * Blog post list now contains only the post description, not the full contents.
 * Paginated blog listing.
