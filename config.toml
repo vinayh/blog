@@ -2,7 +2,6 @@ baseurl = ""
 languageCode = "en-us"
 title = "Vinay Hiremath"
 theme = "hyde-x"
-canonifyurls = true
 relativeurls = true
 
 [author]
