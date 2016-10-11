@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Vinay Hiremath</title>
-    <link>http://hivinay.com/categories/tech/</link>
+    <link>/categories/tech/</link>
     <description>Recent content in Tech on Vinay Hiremath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Jul 2015 17:02:35 -0400</lastBuildDate>
-    <atom:link href="http://hivinay.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Intro web dev with Clojure</title>
-      <link>http://hivinay.com/post/intro-clojure-web/</link>
+      <link>/post/intro-clojure-web/</link>
       <pubDate>Tue, 28 Jul 2015 17:02:35 -0400</pubDate>
       
-      <guid>http://hivinay.com/post/intro-clojure-web/</guid>
+      <guid>/post/intro-clojure-web/</guid>
       <description>
 
 &lt;p&gt;(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides &lt;a href=&#34;http://hivinay.github.io/clojure-web-talk&#34;&gt;here&lt;/a&gt;.)&lt;/p&gt;
@@ -116,10 +116,10 @@ y 2]
     
     <item>
       <title>Git hook to deploy static sites to S3</title>
-      <link>http://hivinay.com/post/git-hooks/</link>
+      <link>/post/git-hooks/</link>
       <pubDate>Tue, 28 Jul 2015 14:49:41 -0400</pubDate>
       
-      <guid>http://hivinay.com/post/git-hooks/</guid>
+      <guid>/post/git-hooks/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.&lt;/p&gt;
 
 &lt;p&gt;All you really need is:&lt;/p&gt;

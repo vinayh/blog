@@ -1,7 +1,9 @@
-baseurl = "http://hivinay.com"
+baseurl = ""
 languageCode = "en-us"
 title = "Vinay Hiremath"
 theme = "hyde-x"
+canonifyurls = true
+relativeurls = true
 
 [author]
 	name = "Vinay Hiremath"
@@ -10,8 +12,8 @@ theme = "hyde-x"
 	theme = "theme-base-09"
 	tagline = "I'm especially interested in science, technology, psychology, philosophy, and linguistics."
 	highlight = "solarized_dark"
-	github = "http://github.com/hivinay"
-	linkedin = "http://linkedin.com/in/vinayahiremath"
-	facebook = "http://facebook.com/vinay427"
-	twitter = "http://twitter.com/vinay427"
+	github = "https://github.com/vinayh"
+	linkedin = "https://linkedin.com/in/vinayahiremath"
+	facebook = "https://facebook.com/vinay427"
+	twitter = "https://twitter.com/vinay427"
 	gravatarHash = "e86ed2290d6849902585c105a69634e3"
