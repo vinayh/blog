@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://www.vinayh.com/post/intro-clojure-web/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/post/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/tags/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/tags/tech/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/</loc>
+    <lastmod>2019-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/license/</loc>
+    <lastmod>2015-07-28T15:28:04-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/post/git-hooks/</loc>
+    <lastmod>2015-07-28T14:49:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/about/</loc>
+    <lastmod>2015-07-28T11:06:51-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.vinayh.com/series/</loc>
+  </url>
+  
+</urlset>

@@ -1,5 +1,5 @@
 +++
-categories = ["tech"]
+tags = ["tech"]
 date = "2015-07-28T14:49:41-04:00"
 description = "A simple hook that syncs your generated site to S3 on a Git push."
 keywords = []
@@ -42,4 +42,4 @@ Note: This S3 bucket policy will enable public read access:
 }
 ```
 
-Courtesy of [Nathan Moos' blog post](https://moosingin3space.github.io/post/git-hooks-hugo/) outlining this process for GitHub Pages, which requires a nested repository with your public files.
+Courtesy of a blog post by [Nathan Moos](https://moosingin3space.github.io) outlining this process for GitHub Pages, which requires a nested repository with your public files.

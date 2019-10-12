@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Intro to backend web dev with Clojure [incomplete] • Vinay Hiremath'>
+<meta property='og:description' content='A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku.'>
+<meta property='og:url' content='http://www.vinayh.com/post/intro-clojure-web/'>
+<meta property='og:site_name' content='Vinay Hiremath'>
+<meta property='og:type' content='article'><meta property='article:section' content='post'><meta property='article:tag' content='tech'><meta property='article:published_time' content='2015-07-28T17:02:35-04:00'/><meta property='article:modified_time' content='2019-10-12T00:00:00Z'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+  <title>Intro to backend web dev with Clojure [incomplete] • Vinay Hiremath</title>
+  <link rel='canonical' href='http://www.vinayh.com/post/intro-clojure-web/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-post has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+       
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/about/'>About</a></li><li class='item'>
+  <a href='https://vinayh.com'>Main Site</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/tech/' style='font-size:1em'>tech</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Vinay Hiremath</p><p class='desc site-desc'>Interests include computer science, neuroscience, transportation, and animal rights</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Intro to backend web dev with Clojure [incomplete]</h1>
+      
+<p class='desc'>A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku.</p>
+
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2015-07-28T17:02:35-04:00'>28 Jul 2015</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<p>(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides <a href="https://github.com/vinayh/clojure-web-talk" target="_blank">here</a>. I have explained the first portion of the content here in more depth.)</p>
+
+<p>I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</p>
+
+<h2 id="what-is-clojure-besides-the-best-language-ever">What is Clojure? (besides the best language ever!)</h2>
+
+<ul>
+<li>A dialect of the Lisp language, which means that the syntax uses elegant S-expressions with the code-is-data philosophy</li>
+<li>Based on the Java Virtual Machine, which means that it is quite fast when compiled to Java bytecode and that you can easily integrate other Java libraries or use your Clojure code in a Java codebase</li>
+<li>Strong emphasis on functional programming, which improves your ability to reason about large projects because state is effectively eliminated</li>
+</ul>
+
+<h2 id="tools-you-will-need">Tools you will need</h2>
+
+<ul>
+<li>Leiningen (for local Clojure development) - <a href="http://leiningen.org" target="_blank">link</a></li>
+<li>Heroku Toolbelt (if you want to deploy to Heroku) - <a href="https://toolbelt.heroku.com/" target="_blank">link</a></li>
+<li>PostgreSQL (for a local database) - <a href="http://www.postgresql.org/download/" target="_blank">link</a></li>
+</ul>
+
+<h2 id="some-basics-of-clojure">Some basics of Clojure</h2>
+
+<p>As mentioned earlier, variables are essentially always immutable in Clojure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>my-name <span style="color:#e6db74">&#34;Vinay&#34;</span>)</code></pre></div>
+<p>This defines a constant called <code>my-name</code> that refers to the string <code>&quot;Vinay&quot;</code>. The code-is-data philosophy allows for assigning variable names to functions (among many other things)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>my-function (<span style="color:#66d9ef">fn </span>[x] (+ <span style="color:#ae81ff">5</span> x)))</code></pre></div>
+<p>This creates a function called <code>my-function</code> that returns the sum of <code>5</code> and a parameter <code>x</code>. Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the <code>+</code> function as being called with two operands, <code>5</code> and <code>x</code>, and returning the resulting sum.</p>
+
+<h2 id="more-basics-of-functions-in-clojure">More basics of functions in Clojure</h2>
+
+<p>.Let&rsquo;s simplify the function notation above using the <code>defn</code> macro to express the same thing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>my-function [x] (+ <span style="color:#ae81ff">5</span> x)</code></pre></div>
+<p>Note that to define a function, <code>defn</code> is followed by:</p>
+
+<ul>
+<li>The function name (eg. <code>my-function</code>)</li>
+<li>The function parameters (eg. <code>x</code>)</li>
+<li>The function implementation (eg <code>(+ 5 x)</code>)</li>
+</ul>
+
+<p>You can call the function like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">my-function</span> <span style="color:#ae81ff">4</span>) <span style="color:#75715e">;; Result is 5 + 4 = 9 in this case</span></code></pre></div>
+<h2 id="confused-by-all-of-the-parentheses">Confused by all of the parentheses?</h2>
+
+<p>Clojure uses S-expressions to denote nearly every statement as a list. As you probably noticed above, function definitions could be denoted as a list, with the elements: <code>defn</code>, the parameters in a vector (i.e. enclosed by <code>[ ]</code>), and the implementation. Just about everything in Clojure uses this syntax, and another common example is the <code>let</code> form which:</p>
+
+<ol>
+<li>Binds variables to values provided as pairs, eg. <code>[variable_1 value_1 variable_2 value_2]</code></li>
+
+<li><p>Evaluates expressions with this context or scope</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">let </span>[x <span style="color:#ae81ff">1</span>
+        y <span style="color:#ae81ff">2</span>]
+      (+ x y))</code></pre></div></li>
+</ol>
+
+<p>The whole <code>let</code> expression evaluates to the result of the last expression, which in this case is the sum of <code>x = 1</code> and <code>y = 2</code>, so <code>3</code></p>
+
+<h2 id="an-arithmetic-expression">An arithmetic expression</h2>
+
+<p>A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit. Simply evaluate by recursing into every S-expression:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(- (+ <span style="color:#ae81ff">1</span> (/ (* <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>) <span style="color:#ae81ff">4</span>)) <span style="color:#ae81ff">5</span>)</code></pre></div>
+<p>The threading macros in Clojure provides a procedural alternative to this with beautiful syntax. Rewriting, starting at the <code>2</code> in the nested expression above:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(-&gt; <span style="color:#ae81ff">2</span>
+  (* <span style="color:#ae81ff">3</span>)
+  (/ <span style="color:#ae81ff">4</span>)
+  (+ <span style="color:#ae81ff">1</span>)
+  (- <span style="color:#ae81ff">5</span>))</code></pre></div>
+<p>The thread-first macro shown above <code>(-&gt;)</code> inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn.</p>
+
+<h2 id="to-maybe-be-continued">To (maybe) be continued&hellip;</h2>
+
+<p>The slide deck (HTML) linked above is a more self-contained introduction that includes all of the information in this post.</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='last-updated'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+  <polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+  
+</svg>
+<span class='screen-reader-text'>Last updated: </span>
+      <time class='entry-date' datetime='2019-10-12T00:00:00Z'>12 Oct 2019</time>
+    </div><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/tech/'>tech</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/post/git-hooks/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Git hook to deploy static sites to S3</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/vinayh' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://facebook.com/vinay427' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://instagram.com/vinaythevegan' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:contact@vinayh.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/vinayahiremath' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2015-2019 Vinay Hiremath </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.67d669ac.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
