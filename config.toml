@@ -3,7 +3,8 @@ baseurl = "https://vinayh.com/blog/"
 languageCode = "en"
 
 # publishDir = "docs"
-relativeURLs = true
+
+# relativeURLs = true
 
 title = "Vinay Hiremath"
 theme = "hyde-hyde"
@@ -11,7 +12,7 @@ theme = "hyde-hyde"
 ## Hugo Built-in Features
 # disqusShortname = "your-disqus-shortname"
 # googleAnalytics = "your-google-analytics-id"
-# enableRobotsTXT = true
+enableRobotsTXT = true
 
 # summarylength = 30
 
@@ -26,7 +27,7 @@ plainIDAnchors = false
     author = "Vinay Hiremath"
     title = "Vinay Hiremath"
     # description = "..."
-    authorimage = "/vinay.png"
+    authorimage = "/img/vinay.png"
     dateformat = "2 January, 2006"
 
     # sidebar, copyright & license
