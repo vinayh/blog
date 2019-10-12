@@ -1,158 +1,210 @@
 <!DOCTYPE html>
-<html lang='en'><head>
-  <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='A simple hook that syncs your generated site to S3 on a Git push.'>
-<meta name='theme-color' content='#ffcd00'>
+<html lang="en">
+    
+    
 
-<meta property='og:title' content='Git hook to deploy static sites to S3 • Vinay Hiremath'>
-<meta property='og:description' content='A simple hook that syncs your generated site to S3 on a Git push.'>
-<meta property='og:url' content='http://www.vinayh.com/post/git-hooks/'>
-<meta property='og:site_name' content='Vinay Hiremath'>
-<meta property='og:type' content='article'><meta property='article:section' content='post'><meta property='article:tag' content='tech'><meta property='article:published_time' content='2015-07-28T14:49:41-04:00'/><meta property='article:modified_time' content='2015-07-28T14:49:41-04:00'/><meta name='twitter:card' content='summary'>
 
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="generator" content="Hugo 0.58.3" />
 
-  <title>Git hook to deploy static sites to S3 • Vinay Hiremath</title>
-  <link rel='canonical' href='http://www.vinayh.com/post/git-hooks/'>
-  
-  
-  <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><link rel='stylesheet' href='/css/custom.css'><style>
-:root{--color-accent:#ffcd00;}
-</style>
+    
+    
+    
 
-  
+<title>Git hook to deploy static sites to S3 • Vinay Hiremath</title>
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git hook to deploy static sites to S3"/>
+<meta name="twitter:description" content="A simple hook that syncs your generated site to S3 on a Git push."/>
+
+<meta property="og:title" content="Git hook to deploy static sites to S3" />
+<meta property="og:description" content="A simple hook that syncs your generated site to S3 on a Git push." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vinayh.com/blog/post/git-hooks/" />
+<meta property="article:published_time" content="2015-07-28T14:49:41-04:00" />
+<meta property="article:modified_time" content="2015-07-28T14:49:41-04:00" /><meta property="og:site_name" content="Vinay Hiremath" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
+
+
+<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
 </head>
-<body class='page type-post has-sidebar'>
 
-  <div class='site'><div id='sidebar' class='sidebar'>
-  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
 
-  <div class='container'><section class='widget widget-about sep-after'>
-  <header>
+    <body class=" ">
     
-    <div class='logo'>
-      <a href='/'>
-        <img src='/images/logo.png'>
-      </a>
-    </div>
-    
-    <h2 class='title site-title '>
-      <a href='/'>
-       
-      </a>
-    </h2>
-    <div class='desc'>
-    
-    </div>
-  </header>
-
-</section>
-<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
-    <div class='container'>
-      <ul><li class='item'>
-  <a href='/about/'>About</a></li><li class='item'>
-  <a href='https://vinayh.com'>Main Site</a></li></ul>
-    </div>
-  </nav>
-
-</section><section class='widget widget-taxonomy_cloud sep-after'>
-  <header>
-    <h4 class='title widget-title'>Tags</h4>
-  </header>
-
-  <div class='container list-container'>
-  <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/tech/' style='font-size:1em'>tech</a>
-      </li></ul>
-</div>
-
-
-</section>
-</div>
-
-  <div class='sidebar-overlay'></div>
-</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
-
-<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
-  <span class='screen-reader-text'>Toggle Sidebar</span>
-  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="3" y1="12" x2="21" y2="12" />
-  <line x1="3" y1="6" x2="21" y2="6" />
-  <line x1="3" y1="18" x2="21" y2="18" />
-  
-</svg>
-</span>
-  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="18" y1="6" x2="6" y2="18" />
-  <line x1="6" y1="6" x2="18" y2="18" />
-  
-</svg>
-</span>
-</button><div class='header-widgets'>
-        <div class='container'></div>
-      </div>
-
-      <header id='header' class='header site-header'>
-        <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>Vinay Hiremath</p><p class='desc site-desc'>Interests include computer science, neuroscience, transportation, and animal rights</p>
-          </div>
-        </div>
-      </header>
-
-      <main id='content'>
-
-
-<article lang='en' class='entry'>
-  <header class='header entry-header'>
-  <div class='container sep-after'>
-    <div class='header-info'>
-      <h1 class='title'>Git hook to deploy static sites to S3</h1>
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vinayh.com/blog">Vinay Hiremath</a>
+      </span>
       
-<p class='desc'>A simple hook that syncs your generated site to S3 on a Git push.</p>
-
-
+        
+        
+        
+        <div class="author-image">
+          <img src="https://vinayh.com/blogimg/hugo.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
     </div>
-    <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-  <line x1="16" y1="2" x2="16" y2="6"/>
-  <line x1="8" y1="2" x2="8" y2="6"/>
-  <line x1="3" y1="10" x2="21" y2="10"/>
-  
-</svg>
-<span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2015-07-28T14:49:41-04:00'>28 Jul 2015</time>
-</span>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Vinay Hiremath</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/blog/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
 
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/vinay427%20%20%20%20" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/vinayh" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/vinaythevegan" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/vinayahiremath" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:contact@vinayh.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 htr3n
   
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
-<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <circle cx="12" cy="12" r="10"/>
-  <polyline points="12 6 12 12 15 15"/>
-  
-</svg>
-2 mins read
-</span>
+</div>
 
 
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
 </div>
 
 
   </div>
-</header>
+</div>
 
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Git hook to deploy static sites to S3</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 28 Jul, 2015
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/blog/tags/tech">tech</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
   
   
-
-  <div class='container entry-content'>
-  <p>It&rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.</p>
+  <div class="post">
+    <p>It&rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.</p>
 
 <p>All you really need is:</p>
 
@@ -162,130 +214,84 @@
 </ol>
 
 <p>For example, if your static site generator is <code>hugo</code>, with destination dir <code>public</code> (like Hugo by default) and your S3 bucket is called <code>&lt;example_bucket&gt;</code>, create a new shell script called <code>pre-push</code> in the <code>.git/hooks</code> directory of your site source as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>set -e
-echo -e <span style="color:#e6db74">&#34;\t Building site...&#34;</span>
+
+<pre><code class="language-bash">#!/bin/bash
+set -e
+echo -e &quot;\t Building site...&quot;
 hugo
-echo -e <span style="color:#e6db74">&#34;\t Successfully generated site&#34;</span>
+echo -e &quot;\t Successfully generated site&quot;
 s3cmd sync --recursive public/ s3://&lt;example_bucket&gt;
-echo -e <span style="color:#e6db74">&#34;\t Successfully deployed to S3&#34;</span></code></pre></div>
+echo -e &quot;\t Successfully deployed to S3&quot;
+</code></pre>
+
 <p>Mark the script as executable using <code>chmod +x .git/hooks/pre-push</code> and try pushing to your Git server. If everything goes well, <code>s3cmd</code> will automatically be triggered and will perform a <code>sync</code> operation to upload changed files to S3. Assuming you have your S3 settings configured for a public web server (static website hosting is enabled, index and error documents are set correctly, public read access is permitted) then you should be able to see the contents of your <code>public</code> dir (ie. your website) at the URL assigned to your bucket.</p>
 
 <p>Note: This S3 bucket policy will enable public read access:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#f92672">&#34;Statement&#34;</span>: [
+
+<pre><code class="language-json">{
+	&quot;Statement&quot;: [
 		{
-			<span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;AllowPublicRead&#34;</span>,
-			<span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
-			<span style="color:#f92672">&#34;Principal&#34;</span>: {
-				<span style="color:#f92672">&#34;AWS&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+			&quot;Sid&quot;: &quot;AllowPublicRead&quot;,
+			&quot;Effect&quot;: &quot;Allow&quot;,
+			&quot;Principal&quot;: {
+				&quot;AWS&quot;: &quot;*&quot;
 			},
-			<span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
-			<span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::&lt;example_bucket&gt;/*&#34;</span>
+			&quot;Action&quot;: &quot;s3:GetObject&quot;,
+			&quot;Resource&quot;: &quot;arn:aws:s3:::&lt;example_bucket&gt;/*&quot;
 		}
 	]
-}</code></pre></div>
-<p>Courtesy of a blog post by <a href="https://moosingin3space.github.io" target="_blank">Nathan Moos</a> outlining this process for GitHub Pages, which requires a nested repository with your public files.</p>
+}
+</code></pre>
 
-</div>
-
-  
-<footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
-  <line x1="7" y1="7" x2="7" y2="7"/>
-  
-</svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/tech/'>tech</a></div>
+<p>Courtesy of a blog post by <a href="https://moosingin3space.github.io">Nathan Moos</a> outlining this process for GitHub Pages, which requires a nested repository with your public files.</p>
 
   </div>
-</footer>
+  
+
+<div class="navigation navigation-single">
+    
+    
+    <a href="/blog/post/intro-clojure-web/" class="navigation-next">
+      <span class="navigation-tittle">Intro to backend web dev with Clojure [incomplete]</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
 
 
 </article>
 
-<nav class='entry-nav'>
-  <div class='container'><div class='next-entry sep-before'>
-      <a href='/post/intro-clojure-web/'>
-        <span class='screen-reader-text'>Next post: </span>Intro to backend web dev with Clojure [incomplete]<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-  
-</svg>
-</span>
-      </a>
-    </div></div>
-</nav>
-
-
-
-
-      </main>
-
-      <footer id='footer' class='footer'>
-        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
-    <ul><li>
-        <a href='https://github.com/vinayh' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://facebook.com/vinay427' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/vinaythevegan' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='mailto:contact@vinayh.com' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-  <polyline points="22,6 12,13 2,6"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://linkedin.com/in/vinayahiremath' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-  <rect x="2" y="9" width="4" height="12"/>
-  <circle cx="4" cy="4" r="2"/>
-  
-</svg>
-</a>
-      </li></ul>
-  </nav>
-</section><div class='copyright'>
-  <p> &copy; 2015-2019 Vinay Hiremath </p>
-</div>
 
         </div>
-      </footer>
+        
+    
 
-    </div>
-  </div><script>window.__assets_js_src="/assets/js/"</script>
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
-<script src='/assets/js/main.67d669ac.js'></script><script src='/js/custom.js'></script>
 
-</body>
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
 
+
+
+
+    
+
+
+
+    </body>
 </html>
-

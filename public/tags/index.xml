@@ -2,20 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Vinay Hiremath</title>
-    <link>http://www.vinayh.com/tags/</link>
+    <link>https://vinayh.com/blog/tags/</link>
     <description>Recent content in Tags on Vinay Hiremath</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Tue, 28 Jul 2015 17:02:35 -0400</lastBuildDate>
     
-	<atom:link href="http://www.vinayh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vinayh.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tech</title>
-      <link>http://www.vinayh.com/tags/tech/</link>
+      <link>https://vinayh.com/blog/tags/tech/</link>
       <pubDate>Tue, 28 Jul 2015 17:02:35 -0400</pubDate>
       
-      <guid>http://www.vinayh.com/tags/tech/</guid>
+      <guid>https://vinayh.com/blog/tags/tech/</guid>
       <description></description>
     </item>
     

@@ -1,8 +1,24 @@
-+++
-date = "2015-07-28T11:06:51-04:00"
-title = "About Me"
-menu = "main"
-+++
-Hey there! I am currently a fourth-year (in fall 2016) undergraduate student at the University of Michigan dual-majoring in Computer Science and Cognitive Science with a minor in Mathematics.
+---
+title: "About Me"
+date: 2019-10-12T22:38:21+02:00
+lastmod: 2019-10-12T22:38:21+02:00
+layout: page
+type:  "page"
+highlight: false
+menu: "main"
+---
 
-Please peruse [my homepage](https://vinayh.com) for more details or to get in touch!
+My academic interests are:
+
+* Computational neuroscience (biologically-plausible computational models)
+* Computer science and software engineering (machine learning algorithms, software tooling and open-source ecosystems, functional programming, algorithm theory)
+
+I'm currently trying to learn more about a myriad of areas in neuroscience and mathematics.
+
+More casual interests include:
+
+* Transportation and urban planning
+* Linguistics (phonetics, evolutionary)
+* Animal rights advocacy
+
+I currently live in Zürich, Switzerland, where I study computational neuroscience at the ETH Zürich/University of Zürich. Please visit the [main site](https://vinayh.com) for a more formal and complete description of my experiences.
