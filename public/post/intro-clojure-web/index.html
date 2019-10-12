@@ -76,7 +76,7 @@
         
         
         <div class="author-image">
-          <img src="https://vinayh.com/blogimg/hugo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://vinayh.com/blogvinay.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -103,8 +103,8 @@
 		 
 			 
 				<li>
-					<a href="/blog/about/">
-						<span>About</span>
+					<a href="https://vinayh.com">
+						<span>Main Site 🔗</span>
 					</a>
 				</li>
 			 
@@ -153,16 +153,12 @@
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2019 Vinay Hiremath
   
-    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
   
 </div>
 
-
-<div class="builtwith">
-Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-</div>
 
 
   </div>
@@ -179,7 +175,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> 28 Jul, 2015
+      <i class="fas fa-calendar-alt"></i> 28 July, 2015
     
     
     
@@ -210,7 +206,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 
 <p>I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</p>
 
-<h2 id="what-is-clojure-besides-the-best-language-ever">What is Clojure? (besides the best language ever!)</h2>
+<h2 id="what-is-clojure-besides-the-best-language-ever:1ceed590d75eec6e025dd72400ff79b3">What is Clojure? (besides the best language ever!)</h2>
 
 <ul>
 <li>A dialect of the Lisp language, which means that the syntax uses elegant S-expressions with the code-is-data philosophy</li>
@@ -218,7 +214,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>Strong emphasis on functional programming, which improves your ability to reason about large projects because state is effectively eliminated</li>
 </ul>
 
-<h2 id="tools-you-will-need">Tools you will need</h2>
+<h2 id="tools-you-will-need:1ceed590d75eec6e025dd72400ff79b3">Tools you will need</h2>
 
 <ul>
 <li>Leiningen (for local Clojure development) - <a href="http://leiningen.org">link</a></li>
@@ -226,7 +222,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>PostgreSQL (for a local database) - <a href="http://www.postgresql.org/download/">link</a></li>
 </ul>
 
-<h2 id="some-basics-of-clojure">Some basics of Clojure</h2>
+<h2 id="some-basics-of-clojure:1ceed590d75eec6e025dd72400ff79b3">Some basics of Clojure</h2>
 
 <p>As mentioned earlier, variables are essentially always immutable in Clojure:</p>
 
@@ -240,7 +236,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 
 <p>This creates a function called <code>my-function</code> that returns the sum of <code>5</code> and a parameter <code>x</code>. Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the <code>+</code> function as being called with two operands, <code>5</code> and <code>x</code>, and returning the resulting sum.</p>
 
-<h2 id="more-basics-of-functions-in-clojure">More basics of functions in Clojure</h2>
+<h2 id="more-basics-of-functions-in-clojure:1ceed590d75eec6e025dd72400ff79b3">More basics of functions in Clojure</h2>
 
 <p>.Let&rsquo;s simplify the function notation above using the <code>defn</code> macro to express the same thing:</p>
 
@@ -260,7 +256,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <pre><code class="language-clojure">(my-function 4) ;; Result is 5 + 4 = 9 in this case
 </code></pre>
 
-<h2 id="confused-by-all-of-the-parentheses">Confused by all of the parentheses?</h2>
+<h2 id="confused-by-all-of-the-parentheses:1ceed590d75eec6e025dd72400ff79b3">Confused by all of the parentheses?</h2>
 
 <p>Clojure uses S-expressions to denote nearly every statement as a list. As you probably noticed above, function definitions could be denoted as a list, with the elements: <code>defn</code>, the parameters in a vector (i.e. enclosed by <code>[ ]</code>), and the implementation. Just about everything in Clojure uses this syntax, and another common example is the <code>let</code> form which:</p>
 
@@ -277,7 +273,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 
 <p>The whole <code>let</code> expression evaluates to the result of the last expression, which in this case is the sum of <code>x = 1</code> and <code>y = 2</code>, so <code>3</code></p>
 
-<h2 id="an-arithmetic-expression">An arithmetic expression</h2>
+<h2 id="an-arithmetic-expression:1ceed590d75eec6e025dd72400ff79b3">An arithmetic expression</h2>
 
 <p>A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit. Simply evaluate by recursing into every S-expression:</p>
 
@@ -295,7 +291,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 
 <p>The thread-first macro shown above <code>(-&gt;)</code> inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn.</p>
 
-<h2 id="to-maybe-be-continued">To (maybe) be continued&hellip;</h2>
+<h2 id="to-maybe-be-continued:1ceed590d75eec6e025dd72400ff79b3">To (maybe) be continued&hellip;</h2>
 
 <p>The slide deck (HTML) linked above is a more self-contained introduction that includes all of the information in this post.</p>
 
