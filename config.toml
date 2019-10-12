@@ -2,6 +2,8 @@
 baseurl = "https://vinayh.com/blog"
 languageCode = "en"
 
+publishDir = "docs/"
+
 title = "Vinay Hiremath"
 theme = "hyde-hyde"
 

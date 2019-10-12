@@ -1,94 +1,212 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en">
+    
+    
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Intro web dev with Clojure &middot; Vinay Hiremath</title>
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
 
-  
-  <link rel="stylesheet" href="../../css/poole.css">
-  <link rel="stylesheet" href="../../css/hyde.css">
-  <link rel="stylesheet" href="../../css/poole-overrides.css">
-  <link rel="stylesheet" href="../../css/hyde-overrides.css">
-  <link rel="stylesheet" href="../../css/hyde-x.css">
-  <link rel="stylesheet" href="../../css/highlight/solarized_dark.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  
+    
+    
+    
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
-  <link href="../../favicon.png" rel="icon">
+<title>Intro to backend web dev with Clojure [incomplete] • Vinay Hiremath</title>
 
-  
-  
-  
-  
 
-  <meta name="description" content="A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku.">
-  <meta name="keywords" content="">
-  
-</head>
-<body class="theme-base-09">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      
-        <img src="https://www.gravatar.com/avatar/e86ed2290d6849902585c105a69634e3?s=200"
-             alt="gravatar" title="Vinay Hiremath">
-      
-      <h1>Vinay Hiremath</h1>
-      <p class="lead">I&rsquo;m especially interested in science, technology, psychology, philosophy, and linguistics.</p>
-    </div>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Intro to backend web dev with Clojure [incomplete]"/>
+<meta name="twitter:description" content="A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku."/>
 
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
-      
-      <li class="sidebar-nav-item"><a href="../../about/">About Me</a></li>
-      
-    </ul>
+<meta property="og:title" content="Intro to backend web dev with Clojure [incomplete]" />
+<meta property="og:description" content="A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vinayh.com/blog/post/intro-clojure-web/" />
+<meta property="article:published_time" content="2015-07-28T17:02:35-04:00" />
+<meta property="article:modified_time" content="2019-10-12T00:00:00+00:00" /><meta property="og:site_name" content="Vinay Hiremath" />
 
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/vinayh"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      
-      <a href="https://linkedin.com/in/vinayahiremath"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      
-      <a href="https://facebook.com/vinay427"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/vinay427"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      
-      </li>
-    </ul>
 
     
 
-    <p>Copyright &copy; 2016 <a href="../../license/">License</a><br/>
-       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
-  </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
+
+
+<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vinayh.com/blog">Vinay Hiremath</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://vinayh.com/blogvinay.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Vinay Hiremath</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/blog/tags/">
+						<span>Tags</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://vinayh.com">
+						<span>Main Site 🔗</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	<a href="https://facebook.com/vinay427%20%20%20%20" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/vinayh" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://instagram.com/vinaythevegan" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://linkedin.com/in/vinayahiremath" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:contact@vinayh.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 Vinay Hiremath
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+  
 </div>
 
 
-<div class="content container">
-  <div class="post">
-    <h1 class="post-title">Intro web dev with Clojure</h1>
-    <span class="post-date">Jul 28, 2015 &middot; 3 minute read
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Intro to backend web dev with Clojure [incomplete]</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 28 July, 2015
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/blog/tags/tech">tech</a>
+          
+      
+    
     
     <br/>
-    <a class="label" href="../../categories/tech">tech</a>
-    </span>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
     
 
 <p>(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides <a href="https://github.com/vinayh/clojure-web-talk">here</a>. I have explained the first portion of the content here in more depth.)</p>
 
 <p>I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</p>
 
-<h2 id="what-is-clojure-besides-the-best-language-ever">What is Clojure? (besides the best language ever!)</h2>
+<h2 id="what-is-clojure-besides-the-best-language-ever:1ceed590d75eec6e025dd72400ff79b3">What is Clojure? (besides the best language ever!)</h2>
 
 <ul>
 <li>A dialect of the Lisp language, which means that the syntax uses elegant S-expressions with the code-is-data philosophy</li>
@@ -96,7 +214,7 @@
 <li>Strong emphasis on functional programming, which improves your ability to reason about large projects because state is effectively eliminated</li>
 </ul>
 
-<h2 id="tools-you-will-need">Tools you will need</h2>
+<h2 id="tools-you-will-need:1ceed590d75eec6e025dd72400ff79b3">Tools you will need</h2>
 
 <ul>
 <li>Leiningen (for local Clojure development) - <a href="http://leiningen.org">link</a></li>
@@ -104,93 +222,126 @@
 <li>PostgreSQL (for a local database) - <a href="http://www.postgresql.org/download/">link</a></li>
 </ul>
 
-<h2 id="some-basics-of-clojure">Some basics of Clojure</h2>
+<h2 id="some-basics-of-clojure:1ceed590d75eec6e025dd72400ff79b3">Some basics of Clojure</h2>
 
-<p>As mentioned earlier, variables are essentially always immutable in Clojure</p>
+<p>As mentioned earlier, variables are essentially always immutable in Clojure:</p>
 
 <pre><code class="language-clojure">(def my-name &quot;Vinay&quot;)
 </code></pre>
 
-<ul>
-<li>This defines a constant called <code>my-name</code> that refers to the string <code>&quot;Vinay&quot;</code><br /></li>
-<li>The code-is-data philosophy allows for assigning variable names to functions (among many other things)
-<code>clojure
-(def my-function (fn [x] (+ 5 x)))
-</code></li>
-<li>This creates a function called <code>my-function</code> that returns the sum of <code>5</code> and a parameter <code>x</code></li>
-<li>Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the <code>+</code> function as being called with two operands, <code>5</code> and <code>x</code>, and returning the resulting sum</li>
-</ul>
+<p>This defines a constant called <code>my-name</code> that refers to the string <code>&quot;Vinay&quot;</code>. The code-is-data philosophy allows for assigning variable names to functions (among many other things)</p>
 
-<h2 id="more-basics-of-functions-in-clojure">More basics of functions in Clojure</h2>
+<pre><code class="language-clojure">(def my-function (fn [x] (+ 5 x)))
+</code></pre>
 
-<ul>
-<li>Let&rsquo;s simplify the function notation above using the <code>defn</code> macro to express the same thing:
-<code>clojure
-(defn my-function [x] (+ 5 x)
-</code></li>
-<li>Note that to define a function, <code>defn</code> is followed by:
+<p>This creates a function called <code>my-function</code> that returns the sum of <code>5</code> and a parameter <code>x</code>. Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the <code>+</code> function as being called with two operands, <code>5</code> and <code>x</code>, and returning the resulting sum.</p>
+
+<h2 id="more-basics-of-functions-in-clojure:1ceed590d75eec6e025dd72400ff79b3">More basics of functions in Clojure</h2>
+
+<p>.Let&rsquo;s simplify the function notation above using the <code>defn</code> macro to express the same thing:</p>
+
+<pre><code class="language-clojure">(defn my-function [x] (+ 5 x)
+</code></pre>
+
+<p>Note that to define a function, <code>defn</code> is followed by:</p>
 
 <ul>
 <li>The function name (eg. <code>my-function</code>)</li>
 <li>The function parameters (eg. <code>x</code>)</li>
 <li>The function implementation (eg <code>(+ 5 x)</code>)</li>
-</ul></li>
-<li>You can call the function like so:
-<code>clojure
-(my-function 4) ;; Result is 5 + 4 = 9 in this case
-</code></li>
 </ul>
 
-<h2 id="confused-by-all-of-the-parentheses">Confused by all of the parentheses?</h2>
+<p>You can call the function like so:</p>
 
-<ul>
-<li>Clojure uses S-expressions to denote nearly every statement as a list</li>
-<li>As you probably noticed above, function definitions could be denoted as a list, with the elements: <code>defn</code>, the parameters in a vector (i.e. enclosed by <code>[ ]</code>), and the implementation</li>
-<li>Just about everything in Clojure uses this syntax, and another common example is the <code>let</code> form which:
+<pre><code class="language-clojure">(my-function 4) ;; Result is 5 + 4 = 9 in this case
+</code></pre>
 
-<ul>
+<h2 id="confused-by-all-of-the-parentheses:1ceed590d75eec6e025dd72400ff79b3">Confused by all of the parentheses?</h2>
+
+<p>Clojure uses S-expressions to denote nearly every statement as a list. As you probably noticed above, function definitions could be denoted as a list, with the elements: <code>defn</code>, the parameters in a vector (i.e. enclosed by <code>[ ]</code>), and the implementation. Just about everything in Clojure uses this syntax, and another common example is the <code>let</code> form which:</p>
+
+<ol>
 <li>Binds variables to values provided as pairs, eg. <code>[variable_1 value_1 variable_2 value_2]</code></li>
-<li>Evaluates expressions with this context or scope
-<code>clojure
-(let [x 1
-y 2]
-(+ x y))
-</code></li>
-</ul></li>
-<li>The whole <code>let</code> expression evaluates to the result of the last expression, which in this case is the sum of <code>x = 1</code> and <code>y = 2</code>, so <code>3</code></li>
-</ul>
 
-<h2 id="an-arithmetic-expression">An arithmetic expression</h2>
+<li><p>Evaluates expressions with this context or scope</p>
 
-<ul>
-<li>A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit</li>
-<li>Simply evaluate by recursing into every S-expression:
-<code>clojure
-(- (+ 1 (/ (* 2 3) 4)) 5)
-</code></li>
-<li>The threading macros in Clojure provides a procedural alternative to this with beautiful syntax. Rewriting, starting at the <code>2</code> in the nested expression above:
-<code>clojure
-(-&gt; 2
-(* 3)
-(/ 4)
-(+ 1)
-(- 5))
-</code></li>
-<li>The thread-first macro shown above <code>(-&gt;)</code> inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn</li>
-</ul>
+<pre><code class="language-clojure">  (let [x 1
+        y 2]
+      (+ x y))
+</code></pre></li>
+</ol>
+
+<p>The whole <code>let</code> expression evaluates to the result of the last expression, which in this case is the sum of <code>x = 1</code> and <code>y = 2</code>, so <code>3</code></p>
+
+<h2 id="an-arithmetic-expression:1ceed590d75eec6e025dd72400ff79b3">An arithmetic expression</h2>
+
+<p>A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit. Simply evaluate by recursing into every S-expression:</p>
+
+<pre><code class="language-clojure">(- (+ 1 (/ (* 2 3) 4)) 5)
+</code></pre>
+
+<p>The threading macros in Clojure provides a procedural alternative to this with beautiful syntax. Rewriting, starting at the <code>2</code> in the nested expression above:</p>
+
+<pre><code class="language-clojure">(-&gt; 2
+  (* 3)
+  (/ 4)
+  (+ 1)
+  (- 5))
+</code></pre>
+
+<p>The thread-first macro shown above <code>(-&gt;)</code> inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn.</p>
+
+<h2 id="to-maybe-be-continued:1ceed590d75eec6e025dd72400ff79b3">To (maybe) be continued&hellip;</h2>
+
+<p>The slide deck (HTML) linked above is a more self-contained introduction that includes all of the information in this post.</p>
 
   </div>
   
+
+<div class="navigation navigation-single">
+    
+    <a href="/blog/post/git-hooks/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Git hook to deploy static sites to S3</span>
+    </a>
+    
+    
 </div>
 
 
+  
+
+  
+    
 
 
-<script src="../../js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(100996799); }catch(e){}</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100996799ns.gif" /></p></noscript>
-</body>
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
 </html>
-
