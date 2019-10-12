@@ -1,8 +1,9 @@
 ## Basic Configuration
-baseurl = "https://vinayh.com/blog"
+baseurl = "https://vinayh.com/blog/"
 languageCode = "en"
 
-publishDir = "docs/"
+# publishDir = "docs"
+relativeURLs = true
 
 title = "Vinay Hiremath"
 theme = "hyde-hyde"
@@ -67,7 +68,7 @@ plainIDAnchors = false
     identifier = "tags"
     url = "/tags/"
 [[menu.main]]
-    name = "Main Site 🔗"
+    name = "Main Site"
     weight = 110
     identifier = "main"
     url = "https://vinayh.com"
