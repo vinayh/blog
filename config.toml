@@ -2,7 +2,7 @@
 baseurl = "https://vinayh.com/blog/"
 languageCode = "en"
 
-# publishDir = "docs"
+publishDir = "docs"
 
 # relativeURLs = true
 

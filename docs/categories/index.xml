@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Vinay Hiremath</title>
@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Vinay Hiremath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Fri, 14 Feb 2020 21:48:38 +0100</lastBuildDate>
     
 	<atom:link href="https://vinayh.com/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>life</title>
+      <link>https://vinayh.com/blog/categories/life/</link>
+      <pubDate>Fri, 14 Feb 2020 21:48:38 +0100</pubDate>
+      
+      <guid>https://vinayh.com/blog/categories/life/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
