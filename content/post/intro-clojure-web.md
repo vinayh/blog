@@ -4,10 +4,10 @@ date = "2015-07-28T17:02:35-04:00"
 lastmod = "2019-10-12"
 description = "A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku."
 keywords = []
-title = "Intro to backend web dev with Clojure [incomplete]"
+title = "Clojure web dev"
 
 +++
-(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides [here](https://github.com/vinayh/clojure-web-talk). I have explained the first portion of the content here in more depth.)
+(This tutorial is INCOMPLETE, but was first given in its complete form as a talk at a Michigan Hackers event on 2015-07-23. See my slides [here](https://github.com/vinayh/clojure-web-talk). I have explained the first portion of the content here in more depth.)
 
 I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.
 

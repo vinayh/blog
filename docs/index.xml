@@ -22,12 +22,12 @@ Moments devoid of thought are often scarce in a world dominated by notifications
     </item>
     
     <item>
-      <title>Intro to backend web dev with Clojure [incomplete]</title>
+      <title>Clojure web dev</title>
       <link>https://vinayh.com/blog/post/intro-clojure-web/</link>
       <pubDate>Tue, 28 Jul 2015 17:02:35 -0400</pubDate>
       
       <guid>https://vinayh.com/blog/post/intro-clojure-web/</guid>
-      <description>(This tutorial was first given as a talk at a Michigan Hackers event on 2015-07-23. See my slides here. I have explained the first portion of the content here in more depth.)
+      <description>(This tutorial is INCOMPLETE, but was first given in its complete form as a talk at a Michigan Hackers event on 2015-07-23. See my slides here. I have explained the first portion of the content here in more depth.)
 I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</description>
     </item>
     
