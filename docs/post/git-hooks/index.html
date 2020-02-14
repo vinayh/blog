@@ -1,206 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    
-
-
     <head>
-    <link href="https://gmpg.org/xfn/11" rel="profile">
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.63.2" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="A simple hook that syncs your generated site to S3 on a Git push.">
 
-    
-    
-    
+		<title>Git hook to deploy static sites to S3 &middot; Vinay Hiremath</title>
 
-<title>Git hook to deploy static sites to S3 • Vinay Hiremath</title>
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git hook to deploy static sites to S3"/>
-<meta name="twitter:description" content="A simple hook that syncs your generated site to S3 on a Git push."/>
-
-<meta property="og:title" content="Git hook to deploy static sites to S3" />
-<meta property="og:description" content="A simple hook that syncs your generated site to S3 on a Git push." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://vinayh.com/blog/post/git-hooks/" />
-<meta property="article:published_time" content="2015-07-28T14:49:41-04:00" />
-<meta property="article:modified_time" content="2015-07-28T14:49:41-04:00" /><meta property="og:site_name" content="Vinay Hiremath" />
-
-
-    
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
-
-
-<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-</head>
-
-
-    <body class=" ">
-    
-<div class="sidebar">
-  <div class="container ">
-    <div class="sidebar-about">
-      <span class="site__title">
-        <a href="https://vinayh.com/blog/">Vinay Hiremath</a>
-      </span>
-      
-        
-        
-        
-        <div class="author-image">
-          <img src="https://vinayh.com/blog/img/vinay.png" alt="Author Image" class="img--circle img--headshot element--center">
-        </div>
-        
-      
-      
-      <p class="site__description">
-        
-      </p>
-    </div>
-    <div class="collapsible-menu">
-      <input type="checkbox" id="menuToggle">
-      <label for="menuToggle">Vinay Hiremath</label>
-      <div class="menu-content">
-        <div>
-	<ul class="sidebar-nav">
-		 
-		 
-			 
-				<li>
-					<a href="/blog/tags/">
-						<span>Tags</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="https://vinayh.com">
-						<span>Main Site</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/blog/about/">
-						<span>About Me</span>
-					</a>
-				</li>
-			 
 		
-	</ul>
+  		<link rel="stylesheet" href="/blog/css/style.css">
+		<link rel="stylesheet" href="/blog/css/fonts.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Vinay Hiremath" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/blog/">
+					<h2 class="nav-title">Vinay Hiremath</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/blog/tags/">
+                
+                <span>Tags</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="https://vinayh.com">
+                
+                <span>Main Site</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/blog/about/">
+                
+                <span>About Me</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Vinay Hiremath
+        <br>
+        <span>on&nbsp;</span><time datetime="2015-07-28 14:49:41 -0400 -0400">July 28, 2015</time>
 </div>
+		<h1 class="post-title">Git hook to deploy static sites to S3</h1>
+<div class="post-line"></div>
 
-        <section class="social">
-	
-	
-	<a href="https://facebook.com/vinay427" rel="me"><i class="fab fa-facebook-f"></i></a>
-	
-	
-	<a href="https://github.com/vinayh" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	<a href="https://instagram.com/vinaythevegan" rel="me"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
-	
-	
-	<a href="https://linkedin.com/in/vinayahiremath" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	
-	
-	<a href="mailto:contact@vinayh.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
+		
 
-      </div>
-    </div>
-    
-<div class="copyright">
-  &copy; 2020 Vinay Hiremath
-  
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
-  
-</div>
-
-
-
-  </div>
-</div>
-
-        <div class="content container">
-            
-    
-<article>
-  <header>
-    <h1>Git hook to deploy static sites to S3</h1>
-    
-    
-<div class="post__meta">
-    
-    
-      <i class="fas fa-calendar-alt"></i> 28 July, 2015
-    
-    
-    
-    
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="badge badge-tag" href="/blog/tags/tech">tech</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 2 min read
-</div>
-
-
-  </header>
-  
-  
-  <div class="post">
-    <p>It&rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.</p>
+		<p>It&rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.</p>
 <p>All you really need is:</p>
 <ol>
 <li>A way to upload a folder to S3 (I use the excellent <code>s3cmd</code>)</li>
@@ -231,53 +102,24 @@ echo -e <span style="color:#e6db74">&#34;\t Successfully deployed to S3&#34;</sp
 }
 </code></pre></div><p>Courtesy of a blog post by <a href="https://moosingin3space.github.io">Nathan Moos</a> outlining this process for GitHub Pages, which requires a nested repository with your public files.</p>
 
-  </div>
-  
 
-<div class="navigation navigation-single">
-    
-    
-    <a href="/blog/post/intro-clojure-web/" class="navigation-next">
-      <span class="navigation-tittle">Intro to backend web dev with Clojure [incomplete]</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
-    
-</div>
+		
+	</div>
 
+	<div class="pagination">
+		<a href="/blog/about/" class="left arrow">&#8592;</a>
+		<a href="/blog/post/intro-clojure-web/" class="right arrow">&#8594;</a>
 
-  
-
-  
-    
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
 
 
-</article>
-
-
-        </div>
-        
-    
-
-<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
-
-
-    
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-        
-    
-    <script type="text/javascript">
-        
-        hljs.initHighlightingOnLoad();
-    </script>
-    
-
-
-
-
-    
-
-
+        		<footer>
+			<span>
+                    &copy; <time datetime="2020-02-15 00:17:31.997592632 &#43;0100 CET m=&#43;0.069598840">2020</time> Vinay Hiremath <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
 
     </body>
 </html>

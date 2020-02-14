@@ -3,6 +3,7 @@ title: "License"
 date: 2019-10-12T23:15:20+02:00
 layout: page
 type:  "page"
+draft: true
 highlight: false
 ---
 

@@ -7,7 +7,7 @@ publishDir = "docs"
 # relativeURLs = true
 
 title = "Vinay Hiremath"
-theme = "hyde-hyde"
+theme = "tale"
 
 ## Hugo Built-in Features
 # disqusShortname = "your-disqus-shortname"
@@ -23,6 +23,10 @@ plainIDAnchors = false
 
 
 ## Site Settings
+#
+[Author]
+    name = "Vinay Hiremath"
+
 [params]
     author = "Vinay Hiremath"
     title = "Vinay Hiremath"

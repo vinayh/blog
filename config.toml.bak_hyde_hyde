@@ -1,0 +1,85 @@
+## Basic Configuration
+baseurl = "https://vinayh.com/blog/"
+languageCode = "en"
+
+publishDir = "docs"
+
+# relativeURLs = true
+
+title = "Vinay Hiremath"
+theme = "hyde-hyde"
+
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+# googleAnalytics = "your-google-analytics-id"
+enableRobotsTXT = true
+
+# summarylength = 30
+
+#paginate = 5
+
+[blackfriday] 
+plainIDAnchors = false
+
+
+## Site Settings
+[params]
+    author = "Vinay Hiremath"
+    title = "Vinay Hiremath"
+    # description = "..."
+    authorimage = "/img/vinay.png"
+    dateformat = "2 January, 2006"
+
+    # sidebar, copyright & license
+    copyright = "Vinay Hiremath"
+    license = "CC BY-NC-SA 4.0"
+    licenseURL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    showBuiltWith = false
+
+    # https://highlightjs.org
+    highlightjs = true
+    highlightjsstyle = "github"
+    
+    # please choose either GraphComment or Disqus or Utterances
+    #GraphCommentId = "..."
+    #UtterancesRepo = "..." # https://utteranc.es/
+    #UtterancesIssueTerm = "..." # pathname, url, title, og:title
+    #UtterancesTheme = "..." # github-light or github-dark
+
+    # Table of contents
+    #toc = none, "hugo", or "tocbot"
+
+## Social Accounts
+[params.social]
+    github = "vinayh"
+    instagram = "vinaythevegan"
+#    xing = "<username>"
+    linkedin = "vinayahiremath"
+#    twitter = "<username>"
+    facebook = "vinay427"
+#    stackoverflow = "<username>"
+#    telegram = "<username>"
+    email = "contact@vinayh.com"
+#    gravatar = "your-email@example.com"
+
+## Main Menu
+[[menu.main]]
+    name = "Tags"
+    weight = 100
+    identifier = "tags"
+    url = "/tags/"
+[[menu.main]]
+    name = "Main Site"
+    weight = 110
+    identifier = "main"
+    url = "https://vinayh.com"
+# [[menu.main]]
+#     name = "Portfolio"
+#     identifier = "portfolio"
+#     weight = 200
+#     url = "/portfolio/"
+# [[menu.main]]
+#     name = "About"
+#     identifier = "about"
+#     weight = 300
+#     url = "/about/"
