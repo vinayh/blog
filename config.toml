@@ -73,7 +73,7 @@ plainIDAnchors = false
     identifier = "tags"
     url = "/tags/"
 [[menu.main]]
-    name = "Main Site"
+    name = "Main site"
     weight = 110
     identifier = "main"
     url = "https://vinayh.com"

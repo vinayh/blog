@@ -2,7 +2,7 @@
 tags = ["tech"]
 date = "2015-07-28T17:02:35-04:00"
 lastmod = "2019-10-12"
-description = "A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku."
+summary = "A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku."
 keywords = []
 title = "Clojure web dev"
 

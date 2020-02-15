@@ -4,6 +4,7 @@ date: 2020-02-14T21:48:38+01:00
 # lastmod: 2020-02-14T21:48:38+01:00
 tags : [ "life"]
 categories : [ "life" ]
+summary: "Taking a moment to reflect on the value of feeling like you belong and are accepted for who you are."
 layout: post
 type:  "post"
 highlight: false

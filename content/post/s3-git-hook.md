@@ -1,9 +1,9 @@
 +++
 tags = ["tech"]
 date = "2015-07-28T14:49:41-04:00"
-description = "A simple hook that syncs your generated site to S3 on a Git push."
+summary = "A simple hook to sync a static site (generated, in this case) to AWS S3 with every Git push."
 keywords = []
-title = "Git hook to deploy static sites to S3"
+title = "Git hook for static sites hosted on S3"
 
 +++
 It's a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.
