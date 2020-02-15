@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Clojure web dev &middot; Vinay Hiremath</title>
+
+		
+  		<link rel="stylesheet" href="/blog/css/style.css">
+		<link rel="stylesheet" href="/blog/css/fonts.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Vinay Hiremath" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/blog/">
+					<h2 class="nav-title">Vinay Hiremath</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/blog/tags/">
+                
+                <span>Tags</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="https://vinayh.com">
+                
+                <span>Main site</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/blog/about/">
+                
+                <span>About me</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Vinay Hiremath
+        <br>
+        <span>on&nbsp;</span><time datetime="2015-07-28 17:02:35 -0400 -0400">July 28, 2015</time>
+</div>
+		<h1 class="post-title">Clojure web dev</h1>
+<div class="post-line"></div>
+
+		
+
+		<p>(This tutorial is INCOMPLETE, but was first given in its complete form as a talk at a Michigan Hackers event on 2015-07-23. See my slides <a href="https://github.com/vinayh/clojure-web-talk">here</a>. I have explained the first portion of the content here in more depth.)</p>
+<p>I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</p>
+<h2 id="what-is-clojure-besides-the-best-language-ever">What is Clojure? (besides the best language ever!)</h2>
+<ul>
+<li>A dialect of the Lisp language, which means that the syntax uses elegant S-expressions with the code-is-data philosophy</li>
+<li>Based on the Java Virtual Machine, which means that it is quite fast when compiled to Java bytecode and that you can easily integrate other Java libraries or use your Clojure code in a Java codebase</li>
+<li>Strong emphasis on functional programming, which improves your ability to reason about large projects because state is effectively eliminated</li>
+</ul>
+<h2 id="tools-you-will-need">Tools you will need</h2>
+<ul>
+<li>Leiningen (for local Clojure development) - <a href="http://leiningen.org">link</a></li>
+<li>Heroku Toolbelt (if you want to deploy to Heroku) - <a href="https://toolbelt.heroku.com/">link</a></li>
+<li>PostgreSQL (for a local database) - <a href="http://www.postgresql.org/download/">link</a></li>
+</ul>
+<h2 id="some-basics-of-clojure">Some basics of Clojure</h2>
+<p>As mentioned earlier, variables are essentially always immutable in Clojure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>my-name <span style="color:#e6db74">&#34;Vinay&#34;</span>)
+</code></pre></div><p>This defines a constant called <code>my-name</code> that refers to the string <code>&quot;Vinay&quot;</code>. The code-is-data philosophy allows for assigning variable names to functions (among many other things)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>my-function (<span style="color:#66d9ef">fn </span>[x] (+ <span style="color:#ae81ff">5</span> x)))
+</code></pre></div><p>This creates a function called <code>my-function</code> that returns the sum of <code>5</code> and a parameter <code>x</code>. Note the prefix notation for arithmetic operations here, which maintains consistent function notation. Think of the <code>+</code> function as being called with two operands, <code>5</code> and <code>x</code>, and returning the resulting sum.</p>
+<h2 id="more-basics-of-functions-in-clojure">More basics of functions in Clojure</h2>
+<p>.Let&rsquo;s simplify the function notation above using the <code>defn</code> macro to express the same thing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>my-function [x] (+ <span style="color:#ae81ff">5</span> x)
+</code></pre></div><p>Note that to define a function, <code>defn</code> is followed by:</p>
+<ul>
+<li>The function name (eg. <code>my-function</code>)</li>
+<li>The function parameters (eg. <code>x</code>)</li>
+<li>The function implementation (eg <code>(+ 5 x)</code>)</li>
+</ul>
+<p>You can call the function like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">my-function</span> <span style="color:#ae81ff">4</span>) <span style="color:#75715e">;; Result is 5 + 4 = 9 in this case</span>
+</code></pre></div><h2 id="confused-by-all-of-the-parentheses">Confused by all of the parentheses?</h2>
+<p>Clojure uses S-expressions to denote nearly every statement as a list. As you probably noticed above, function definitions could be denoted as a list, with the elements: <code>defn</code>, the parameters in a vector (i.e. enclosed by <code>[ ]</code>), and the implementation. Just about everything in Clojure uses this syntax, and another common example is the <code>let</code> form which:</p>
+<ol>
+<li>
+<p>Binds variables to values provided as pairs, eg. <code>[variable_1 value_1 variable_2 value_2]</code></p>
+</li>
+<li>
+<p>Evaluates expressions with this context or scope</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[x <span style="color:#ae81ff">1</span>
+      y <span style="color:#ae81ff">2</span>]
+    (+ x y))
+</code></pre></div></li>
+</ol>
+<p>The whole <code>let</code> expression evaluates to the result of the last expression, which in this case is the sum of <code>x = 1</code> and <code>y = 2</code>, so <code>3</code></p>
+<h2 id="an-arithmetic-expression">An arithmetic expression</h2>
+<p>A benefit of this: no order of operations because the parentheses and prefix notation make things very explicit. Simply evaluate by recursing into every S-expression:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(- (+ <span style="color:#ae81ff">1</span> (/ (* <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>) <span style="color:#ae81ff">4</span>)) <span style="color:#ae81ff">5</span>)
+</code></pre></div><p>The threading macros in Clojure provides a procedural alternative to this with beautiful syntax. Rewriting, starting at the <code>2</code> in the nested expression above:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(-&gt; <span style="color:#ae81ff">2</span>
+  (* <span style="color:#ae81ff">3</span>)
+  (/ <span style="color:#ae81ff">4</span>)
+  (+ <span style="color:#ae81ff">1</span>)
+  (- <span style="color:#ae81ff">5</span>))
+</code></pre></div><p>The thread-first macro shown above <code>(-&gt;)</code> inserts the result of each expression as the first argument of the expression below it, then continues the process with the expressions below that one in turn.</p>
+<h2 id="to-maybe-be-continued">To (maybe) be continued&hellip;</h2>
+<p>The slide deck (HTML) linked above is a more self-contained introduction that includes all of the information in this post.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/blog/post/s3-git-hook/" class="left arrow">&#8592;</a>
+		<a href="/blog/post/belonging/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+                    &copy; <time datetime="2020-02-15 16:10:02.560680513 &#43;0100 CET m=&#43;0.069486363">2020</time> Vinay Hiremath <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

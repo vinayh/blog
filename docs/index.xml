@@ -17,41 +17,34 @@
       <pubDate>Fri, 14 Feb 2020 21:48:38 +0100</pubDate>
       
       <guid>https://vinayh.com/blog/post/belonging/</guid>
-      <description>Note: This isn&amp;rsquo;t the type of post I expected to write when setting up this blog, but given the extraordinarily long hiatus since my last post and nonexistent readership (most posts are primarily written to help me structure my thoughts), it seems as worthy as any.
-Moments devoid of thought are often scarce in a world dominated by notifications and messages from seemingly every direction, but I am regularly impressed by their value.</description>
+      <description>Taking a moment to reflect on the value of feeling like you belong and are accepted for who you are.</description>
     </item>
     
     <item>
       <title>Clojure web dev</title>
-      <link>https://vinayh.com/blog/post/intro-clojure-web/</link>
+      <link>https://vinayh.com/blog/post/clojure-web-dev/</link>
       <pubDate>Tue, 28 Jul 2015 17:02:35 -0400</pubDate>
       
-      <guid>https://vinayh.com/blog/post/intro-clojure-web/</guid>
-      <description>(This tutorial is INCOMPLETE, but was first given in its complete form as a talk at a Michigan Hackers event on 2015-07-23. See my slides here. I have explained the first portion of the content here in more depth.)
-I will start by talking about some basics of Clojure, then move onto explaining the fundamental purpose of a backend in web development, and finish with a demo of a simple web app (with complete code) that you can deploy to Heroku with a one-click button or try out on another platform of your choice.</description>
+      <guid>https://vinayh.com/blog/post/clojure-web-dev/</guid>
+      <description>A tutorial to get beginners to Clojure or web development acquainted with using Compojure and Heroku.</description>
     </item>
     
     <item>
-      <title>Git hook to deploy static sites to S3</title>
-      <link>https://vinayh.com/blog/post/git-hooks/</link>
+      <title>Git hook for static sites hosted on S3</title>
+      <link>https://vinayh.com/blog/post/s3-git-hook/</link>
       <pubDate>Tue, 28 Jul 2015 14:49:41 -0400</pubDate>
       
-      <guid>https://vinayh.com/blog/post/git-hooks/</guid>
-      <description>It&amp;rsquo;s a surprisingly simple process to setup S3 syncing with a static site generator with source that you sync using Git. This will allow you to track revision history on your actual writing of posts, etc. while having the generated site automatically deployed on S3 on each push.
-All you really need is:
- A way to upload a folder to S3 (I use the excellent s3cmd) A hook that triggers the upload on every git push  For example, if your static site generator is hugo, with destination dir public (like Hugo by default) and your S3 bucket is called &amp;lt;example_bucket&amp;gt;, create a new shell script called pre-push in the .</description>
+      <guid>https://vinayh.com/blog/post/s3-git-hook/</guid>
+      <description>A simple hook to sync a static site (generated, in this case) to AWS S3 with every Git push.</description>
     </item>
     
     <item>
-      <title>About Me</title>
+      <title>About me</title>
       <link>https://vinayh.com/blog/about/</link>
       <pubDate>Mon, 27 Jul 2015 22:38:21 +0200</pubDate>
       
       <guid>https://vinayh.com/blog/about/</guid>
-      <description>My academic interests are:
- Computational neuroscience (biologically-plausible computational models) Computer science and software engineering (machine learning algorithms, software tooling and open-source ecosystems, functional programming, algorithm theory)  I&amp;rsquo;m currently trying to learn more about a myriad of areas in neuroscience and mathematics.
-More casual interests include:
- Transportation and urban planning Linguistics (phonetics, evolutionary) Animal rights advocacy  I currently live in Zürich, Switzerland, where I study computational neuroscience at the ETH Zürich/University of Zürich.</description>
+      <description>A little bit about me. Feel free to visit the main site for a little bit more about me.</description>
     </item>
     
   </channel>
