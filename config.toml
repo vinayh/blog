@@ -68,6 +68,11 @@ plainIDAnchors = false
 
 ## Main Menu
 [[menu.main]]
+    name = "Daily"
+    weight = 90
+    identifier = "daily"
+    url = "/categories/daily"
+[[menu.main]]
     name = "Tags"
     weight = 100
     identifier = "tags"
