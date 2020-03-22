@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>daily on Vinay Hiremath</title>
+    <link>https://vinayh.com/blog/categories/daily/</link>
+    <description>Recent content in daily on Vinay Hiremath</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 22 Mar 2020 16:32:25 +0100</lastBuildDate>
+    
+	<atom:link href="https://vinayh.com/blog/categories/daily/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2020-03-22</title>
+      <link>https://vinayh.com/blog/daily/2020-03-22/</link>
+      <pubDate>Sun, 22 Mar 2020 16:32:25 +0100</pubDate>
+      
+      <guid>https://vinayh.com/blog/daily/2020-03-22/</guid>
+      <description>I started this daily notes sub-blog to have a more frictionless way to post daily thoughts without the commitment of composing a full blog post. The #100Days challenge which requires writing and publishing a post every day for a hundred consecutive days seemed like an appropriate endeavor, particularly in this time of self-quarantining due to the coronavirus which necessitates more solitary activities. I&amp;rsquo;m interested in the implications of obligating oneself to capture a fleeting thought and develop it into a coherent narrative, every single day.</description>
+    </item>
+    
+  </channel>
+</rss>
