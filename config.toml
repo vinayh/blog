@@ -40,6 +40,7 @@ plainIDAnchors = false
     licenseURL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
     showBuiltWith = false
 
+    mainSections = ["post", "blog", "docs"]
     # https://highlightjs.org
     highlightjs = true
     highlightjsstyle = "github"
