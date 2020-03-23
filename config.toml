@@ -41,7 +41,7 @@ plainIDAnchors = false
     showBuiltWith = false
 
     # Only display these content types on the homepage, added "where" to filter out others from Tale theme
-    mainSections = ["post", "blog", "docs"]
+    mainSections = ["daily", "post", "blog", "docs"]
     # https://highlightjs.org
     highlightjs = true
     highlightjsstyle = "github"
