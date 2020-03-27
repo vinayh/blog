@@ -6,10 +6,19 @@
     <description>Recent content in daily on Vinay Hiremath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Mar 2020 19:33:55 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 23:56:08 +0100</lastBuildDate>
     
 	<atom:link href="https://vinayh.com/blog/categories/daily/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Global music</title>
+      <link>https://vinayh.com/blog/daily/2020-03-26/</link>
+      <pubDate>Thu, 26 Mar 2020 23:56:08 +0100</pubDate>
+      
+      <guid>https://vinayh.com/blog/daily/2020-03-26/</guid>
+      <description>As part of better understanding what types of music fit my various mental states and moods, I have been trying to find music when reading or writing material that requires a little less cognitive load. For more intense tasks, I generally prefer non-lyrical electronic music or revert to eschewing sounds altogether. However, for medium load tasks that are typically less technical or layered in complexity, the unused load creates a void that seems to lead my thoughts astray over a period of time.</description>
+    </item>
     
     <item>
       <title>Prioritizing</title>
