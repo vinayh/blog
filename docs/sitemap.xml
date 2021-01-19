@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vinayh.com/blog/categories/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/daily/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/tags/daily/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/categories/daily/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/daily/2021-01-19/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/tags/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vinayh.com/blog/</loc>
+    <lastmod>2021-01-19T03:41:38+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vinayh.com/blog/post/audible/</loc>
     <lastmod>2020-08-29T11:09:24+02:00</lastmod>
   </url>
@@ -13,42 +48,12 @@
   </url>
   
   <url>
-    <loc>https://vinayh.com/blog/tags/</loc>
-    <lastmod>2020-08-29T11:09:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://vinayh.com/blog/tags/tech/</loc>
     <lastmod>2020-08-29T11:09:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vinayh.com/blog/</loc>
-    <lastmod>2020-08-29T11:09:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://vinayh.com/blog/daily/2020-04-02/</loc>
-    <lastmod>2020-04-08T01:03:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vinayh.com/blog/categories/</loc>
-    <lastmod>2020-04-08T01:03:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vinayh.com/blog/daily/</loc>
-    <lastmod>2020-04-08T01:03:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vinayh.com/blog/tags/daily/</loc>
-    <lastmod>2020-04-08T01:03:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vinayh.com/blog/categories/daily/</loc>
     <lastmod>2020-04-08T01:03:20+02:00</lastmod>
   </url>
   

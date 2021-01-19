@@ -6,10 +6,15 @@
     <description>Recent content in Tags on Vinay Hiremath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Aug 2020 11:09:24 +0200</lastBuildDate>
-    
-	<atom:link href="https://vinayh.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 19 Jan 2021 03:41:38 +0100</lastBuildDate><atom:link href="https://vinayh.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>daily</title>
+      <link>https://vinayh.com/blog/tags/daily/</link>
+      <pubDate>Tue, 19 Jan 2021 03:41:38 +0100</pubDate>
+      
+      <guid>https://vinayh.com/blog/tags/daily/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tech</title>
@@ -17,15 +22,6 @@
       <pubDate>Sat, 29 Aug 2020 11:09:24 +0200</pubDate>
       
       <guid>https://vinayh.com/blog/tags/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>daily</title>
-      <link>https://vinayh.com/blog/tags/daily/</link>
-      <pubDate>Wed, 08 Apr 2020 01:03:20 +0200</pubDate>
-      
-      <guid>https://vinayh.com/blog/tags/daily/</guid>
       <description></description>
     </item>
     
