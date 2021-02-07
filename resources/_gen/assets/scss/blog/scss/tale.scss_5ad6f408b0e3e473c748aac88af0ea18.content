@@ -516,4 +516,7 @@ footer {
   display: block;
   width: 2rem; }
 
+.article-discussion {
+  margin: 0; }
+
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,11 @@
----
-title: "About me"
-date: 2015-07-27T22:38:21+02:00
-lastmod: 2019-10-12T22:38:21+02:00
-summary: "A little bit about me. Feel free to visit the main site for a little bit more about me." 
-layout: page
-type:  "page"
-highlight: false
-menu: "main"
----
++++
+title = "About Me"
+description = "A little bit about me. Feel free to visit the main site for a little bit more about me."
+date = "2015-07-27"
+lastmod = "2021-02-07"
+aliases = ["about-us", "about-me", "contact"]
+author = "Vinay Hiremath"
++++
 
 My academic interests are:
 
@@ -16,10 +14,16 @@ My academic interests are:
 
 I'm currently trying to learn more about a myriad of areas in neuroscience and mathematics.
 
-More casual interests include:
+Other interests include:
 
 * Transportation and urban planning
 * Linguistics (phonetics, evolutionary)
 * Animal rights advocacy
+* Running
+* Vegan cooking and baking
+* Open-source software development
 
 I currently live in Zürich, Switzerland, where I study computational neuroscience at the ETH Zürich/University of Zürich. Please visit the [main site](https://vinayh.com) for a more formal and complete description of my experiences.
+
+You can also find me at:
+{{< social >}}
