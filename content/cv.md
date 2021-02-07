@@ -6,6 +6,7 @@ aliases = ["cv", "resume", "curriculum-vitae"]
 author = "Vinay Hiremath"
 +++
 
+A more complete PDF version of my CV, last updated 2021-02-07, can be found [here](/blog/Vinay-Hiremath_2021-02-07.pdf).
 ## Education
 ##### ETH Zürich and University of Zürich - [Institute of Neuroinformatics](https://www.ini.uzh.ch/en.html)
 * MSc in Neural Systems and Computation (Sep. 2018 to Present)
@@ -27,6 +28,14 @@ author = "Vinay Hiremath"
 ##### University of Michigan - Ann Arbor
 * Research Assistant (Oct. 2014 - Dec. 2014)
 * Worked with Prof. Satinder Singh Baveja and Prof. Richard Lewis. I covered fundamental texts and papers in reinforcement learning (RL) such as the textbook by Sutton and Barto, Reinforcement Learning: An Introduction. I then implemented various RL algorithms, which were evaluated for performance using a variety of metrics for investigation by other lab members to develop more domain-agnostic RL systems.
+
+##### University of Michigan - Ann Arbor
+* Research Assistant (Sept. 2013 - May 2014)
+* Worked with Prof. Charles Brooks III on a computational biophysics project involving the evaluation of potentially more efficient protein folding simulation methods. Improved skills in generating and visualizing large quantities of data.
+
+##### High School Honors Science Program, Michigan State University
+* Research Assistant (June 2012 - Aug. 2012)
+* Worked with Dr. Mitchell McGrath in the Plant Sciences department to identify and outline differential expression during sugar beet germination when exposed to hydrogen peroxide as opposed to water. Wrote Python programs and adapted existing tools to analyze gene sequencing results.
 
 ## Work
 
